@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Home Page(failed)">
     <classes>
-      <class name="Practice.ConnexxtedDev.Android.Login">
+      <class name="Practice.ConnexxtedDev.Android.Home">
         <methods>
+          <include name="validEmailAndPassword"/>
+          <include name="clickImage"/>
           <include name="Configure"/>
-          <include name="invalidEmail"/>
-          <include name="tearDown"/>
+          <include name="search"/>
+          <include name="clickOnTitle"/>
         </methods>
-      </class> <!-- Practice.ConnexxtedDev.Android.Login -->
+      </class> <!-- Practice.ConnexxtedDev.Android.Home -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Home Page(failed) -->
 </suite> <!-- Failed suite [Suite] -->

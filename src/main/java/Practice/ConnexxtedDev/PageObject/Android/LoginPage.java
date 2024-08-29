@@ -14,8 +14,7 @@ public class LoginPage{
 	{
 		super();
 		this.driver =driver;
-		PageFactory.initElements(new AppiumFieldDecorator(driver), this); //
-		
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this); 
 	}
 	
 	@AndroidFindBy(xpath="//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.EditText[1]")
@@ -36,6 +35,13 @@ public class LoginPage{
 	@AndroidFindBy(xpath="//android.view.View[@content-desc=\"Please enter email id in the correct format\"]")
 	private WebElement emailValidation;
 	
+	@AndroidFindBy(xpath = "//android.widget.Toast")
+	private WebElement toast;
+	
+	@AndroidFindBy(accessibility = "Welcome to Connexxted")
+	private WebElement HomePageTitle;
+
+	
 	public void enterEmail(String email) {
 		emailClick.click();
 		emailEnter.sendKeys(email);
@@ -53,4 +59,20 @@ public class LoginPage{
 	public String emailValidation() {
         return emailValidation.getAttribute("content-desc");
     }
+	
+	public String toastMessage() {
+        return toast.getAttribute("name");
+    }
+	
+	public void clearEmail() {
+		emailEnter.clear();
+	}
+	
+	public void clearPassword() {
+		passwordEnter.clear();
+	}
+	
+	public String homePageTitle() {
+		return HomePageTitle.getAttribute("content-desc");
+	}
 }

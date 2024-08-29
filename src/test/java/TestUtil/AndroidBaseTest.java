@@ -34,7 +34,7 @@ public class AndroidBaseTest {
 	 Thread.sleep(3000);
 	}
 	
-	@AfterClass
+/*	@AfterClass
 	 public void tearDown() {
 		 
 		 if(driver!=null)
@@ -42,5 +42,5 @@ public class AndroidBaseTest {
 			driver.quit();
 	        service.stop();
 	 }
-	 
+*/	 
 }
